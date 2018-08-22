@@ -1,0 +1,24 @@
+.test{
+    margin: 20px 100px 10px 200px;
+    font-size: 120px;
+}
+.layer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    /* background: rgba(0, 0, 0, .5) */
+}
+.mask{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+    background: url(2.png);
+    width: 843px;
+    height: 520px;
+    margin-top: -260px;
+    margin-left: -421px;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<style>
+	@keyframes myfirst {
+		from {
+			background: red;
+		}
+		to {
+			background: yellow;
+		}
+	}
+
+	div {
+		width: 500px;
+		height: 500px;
+		margin: 200px auto;
+	}
+
+	ul {
+		display: inline-block;
+		padding: 10px;
+	}
+
+	ul li {
+		position: relative;
+		list-style-type: none;
+		float: left;
+		height: 24px;
+		width: 24px;
+		border-radius: 50%;
+		text-align: center;
+		background: #f0f2f4;
+		color: #cfd1d7;
+	}
+
+	ul li:not(:last-child) {
+		margin-right: 36px;
+	}
+
+	ul li.selected {
+		background: #fc652f;
+		color: #fff;
+	}
+
+	ul li .line {
+		position: absolute;
+		top: 10px;
+		right: 24px;
+		width: 36px;
+		height: 2px;
+		background: #f0f2f4;
+	}
+
+	ul li.selected .line {
+		background: #fc652f;
+	}
+
+</style>
+
+<body>
+	<div>
+		<ul>
+			<li class="selected">1</li>
+			<li class="selected"><span class="line"></span>2</li>
+			<li><span class="line"></span>3</li>
+			<li><span class="line"></span>4</li>
+		</ul>
+	</div>
+</body>
+<script>
+
+
+</script>
+
+</html>

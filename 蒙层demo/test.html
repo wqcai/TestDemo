@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+	<div class="test">Hello world!!! Hello world!!!</div>
+	<div class="test">Hello world!!! Hello world!!!</div>
+	<div class="test">Hello world!!! Hello world!!!</div>
+	<div class="test">Hello world!!! Hello world!!!</div>
+	<div class="test">Hello world!!! Hello world!!!</div>
+	<canvas id="canvasId" width="400" height="400" class="layer">
+        Your browser does not support the canvas element.
+    </canvas>
+</body>
+<script lang="javascript">
+	var canvas = document.getElementById("canvasId");
+	var img = new Image();
+	var i = 0;
+	var imgArr = [{
+		path: './2.png',
+		width: 843,
+		height: 520,
+		x: 650,
+		y: 300
+	}, {
+		path: './3.png',
+		width: 744,
+		height: 278,
+		x: 700,
+		y: 100
+	},
+	{
+		path: './4.png',
+		width: 673,
+		height: 544,
+		x: 200,
+		y: 100
+	},{
+		path: './5.png',
+		width: 577,
+		height: 369,
+		x: 200,
+		y: 50
+	}]
+
+	function initCanvas() {
+		canvas.width = document.body.clientWidth;
+		canvas.height = document.body.clientHeight;
+		var context = canvas.getContext("2d");
+		context.fillStyle = "rgba(0,0,0,0.8)"; //设置填充色（可以是渐变色或半透明色）
+		context.fillRect(0, 0, canvas.width, canvas.height); //填充背景色
+		var obj = imgArr[i];
+		img.src = obj.path;
+		img.onload = function () {
+			context.clearRect(obj.x, obj.y, obj.width, obj.height); //抠出一个矩形区域
+			context.drawImage(img, obj.x, obj.y);
+		}
+		i++;
+		if (i === imgArr.length) {
+			i = 0;
+		}
+	}
+
+	window.onkeyup = function (e) {
+		if (e.keyCode === 13) {
+			initCanvas()
+		}
+	}
+	initCanvas()
+
+</script>
+
+</html>
